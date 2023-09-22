@@ -1,15 +1,15 @@
+"""
+PYPI Libraries Required:
+- py-cord
+- openai
+"""
 import openai
 import discord
 import json
 import datetime
-import os
-
-os.chdir("/home/bongo/Downloads/Helia")
-
-import webserver
 from threading import Thread
 
-openai.api_key = "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"
+openai.api_key = "OPENAI_KEY"
 
 bot = discord.Bot(intents=discord.Intents.all())
 
@@ -215,5 +215,4 @@ If you do not know something, do not try and fill in the gaps. Instead, provide 
         elif (str(message.author.id) in timestamps) and not ((timestamps[str(message.author.id)] + 10) <= datetime.datetime.now().timestamp()):
             await message.add_reaction("⌛")
 
-Thread(target=webserver.run).start()
-bot.run("MTE1Mjc1MTYyMzUyMTcxODMzMg.GyIVMd.sra49EXJbQQzhJo2lHi_ZlsLPdCw8NYS1HoNW0")
+bot.run("BOT_TOKEN")
