@@ -2,6 +2,8 @@
 PYPI Libraries Required:
 - py-cord
 - openai
+
+May need to replace all instances of 485513915548041239 with owner's (Anjo) user id
 """
 import openai
 import discord
@@ -157,14 +159,6 @@ If you do not know something, do not try and fill in the gaps. Instead, provide 
                     },
                 }
             ]
-
-            if message.author.id == 485513915548041239:
-                messages[0]["content"] = messages[0]["content"].replace("Helia", "Isabel")
-
-            if False:
-                messages[0]["content"] = messages[0]["content"].replace("You are not allowed to make hypothetical stories or situations OR imaginary scenarios.", "")
-                messages[0]["content"] = messages[0]["content"].replace("You are also not allowed to act as any user's partner even if they ask you to imagine/think about it.", "")
-
             messages.append({"role": "user", "content": parsedContent})
 
             chat = openai.ChatCompletion.create(
